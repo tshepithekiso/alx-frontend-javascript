@@ -1,12 +1,14 @@
-export default function uploadPhoto(filename) {
+function getFullResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
-    if (filename) {
+    if (success) {
       resolve({
         status: 200,
-        body: `${filename} was uploaded`,
+        body: 'Success',
       });
     } else {
-      reject(new Error('File name required'));
+      reject(new Error('The fake API is not working currently'));
     }
   });
 }
+
+export default getFullResponseFromAPI;
