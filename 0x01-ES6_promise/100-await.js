@@ -1,4 +1,4 @@
-import { uploadPhoto, createUser } from './utils.js';
+import { uploadPhoto, createUser } from './utils';
 
 async function asyncUploadUser() {
   try {
@@ -9,16 +9,15 @@ async function asyncUploadUser() {
 
     return {
       photo: photoResponse,
-      user: userResponse
-    };
+      user: userResponse,
+    }; // Added trailing comma after 'userResponse'
   } catch (error) {
     console.error('Error in asyncUploadUser:', error);
     return {
       photo: null,
-      user: null
-    };
+      user: null,
+    }; // Added trailing comma after 'null'
   }
 }
 
 export default asyncUploadUser;
-
