@@ -11,7 +11,7 @@ async function handleProfileSignup(firstName, lastName, fileName) {
     return [
       { status: userResult.status, value: userResult.status === 'fulfilled' ? userResult.value : userResult.reason },
       { status: photoResult.status, value: photoResult.status === 'fulfilled' ? photoResult.value : photoResult.reason },
-    ]; // Added trailing commas after each object in the array
+    ];
   } catch (error) {
     return [{ status: 'rejected', value: error.message }];
   }
