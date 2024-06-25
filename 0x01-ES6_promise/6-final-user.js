@@ -1,5 +1,5 @@
-import signUpUser from './4-user-promise.js';
-import uploadPhoto from './5-photo-reject.js';
+import signUpUser from './4-user-promise';
+import uploadPhoto from './5-photo-reject';
 
 async function handleProfileSignup(firstName, lastName, fileName) {
   try {
@@ -10,12 +10,11 @@ async function handleProfileSignup(firstName, lastName, fileName) {
 
     return [
       { status: userResult.status, value: userResult.status === 'fulfilled' ? userResult.value : userResult.reason },
-      { status: photoResult.status, value: photoResult.status === 'fulfilled' ? photoResult.value : photoResult.reason }
-    ];
+      { status: photoResult.status, value: photoResult.status === 'fulfilled' ? photoResult.value : photoResult.reason },
+    ]; // Added trailing commas after each object in the array
   } catch (error) {
     return [{ status: 'rejected', value: error.message }];
   }
 }
 
 export default handleProfileSignup;
-
