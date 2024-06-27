@@ -12,11 +12,10 @@ class EVCar extends Car {
 
   cloneCar() {
     const { _brand, _motor, _color } = this;
-    const constructor = Object.getPrototypeOf(this).constructor;
+    // Remove the unused 'constructor' variable assignment
     const clonedCar = new Car(_brand, _motor, _color); // Return instance of Car instead of EVCar
     return clonedCar;
   }
 }
 
 export default EVCar;
-
