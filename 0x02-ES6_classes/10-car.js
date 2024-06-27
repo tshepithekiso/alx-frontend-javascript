@@ -23,8 +23,8 @@ class Car {
   }
 
   cloneCar() {
-    const { _brand, _motor, _color } = this;
-    const constructor = Object.getPrototypeOf(this).constructor;
+    const { _brand, _motor, _color } = this; // Use object destructuring for clarity
+    const { constructor } = Object.getPrototypeOf(this);
     const clonedCar = new constructor(_brand, _motor, _color);
     return clonedCar;
   }
