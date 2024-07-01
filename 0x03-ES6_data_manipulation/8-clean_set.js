@@ -1,14 +1,17 @@
-export default function cleanSet(set, startString) {
-  let result = '';
+function cleanSet(set, startString) {
+  if (!set || typeof startString !== 'string' || startString.length === 0) {
+    return '';
+  }
 
-  set.forEach((value) => {
-    if (value.startsWith(startString)) {
-      if (result.length > 0) {
-        result += '-';
-      }
-      result += value.substring(startString.length);
+  const filteredValues = [];
+
+  for (const value of set) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
+      filteredValues.push(value.slice(startString.length));
     }
-  });
+  }
 
-  return result;
+  return filteredValues.join('-');
 }
+
+export default cleanSet;
